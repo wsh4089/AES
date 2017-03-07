@@ -105,7 +105,7 @@ size_t const kDefaultKeySize = kCCKeySizeAES128;
     for (int i=0; i<size; i++) {
         byte_chars[0] = hex[i*2];
         byte_chars[1] = hex[(i*2)+1];
-        keyBytes[i] = strtol(byte_chars, NULL, size);
+        keyBytes[i] = strtol(byte_chars, NULL, (int)size);
     }
     NSData *keyData = [NSData dataWithBytes:keyBytes length:size];
     
